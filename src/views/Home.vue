@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home-wrap">
+    <MySwiper />
+    <Card :imgData="imD" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import MySwiper from "@/components/MySwiper"
+import Card from "@/components/Card"
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    MySwiper, Card
+  },
+  data () {
+    return {
+      imD: [
+        {
+          href: "/home",
+          imgUrl: require("@/assets/images/Swiper_img/webp1.webp"),
+          id: "1"
+        },
+        {
+          href: "/tjMarket",
+          imgUrl: require("@/assets/images/Swiper_img/webp2.webp"),
+          id: "2"
+        },
+        {
+          href: "/home",
+          imgUrl: require("@/assets/images/Swiper_img/webp3.webp"),
+          id: "3"
+        }
+      ]
+    }
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>
