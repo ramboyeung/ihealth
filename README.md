@@ -1,4 +1,4 @@
-# ikang
+# ihealth
 
 ## Project setup
 ```

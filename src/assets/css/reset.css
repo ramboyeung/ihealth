@@ -8,7 +8,7 @@ body,button,input,select,textarea{font-size:12px;font-family:"PingFang SC",Arial
 h1,h2,h3,h4,h5,h6{font-size:100%}
 i,em{font-style:normal}
 small{font-size:12px}
-ol,ul{list-style:none}
+ol,ul,li,dl,dt,dd{list-style:none}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
 legend{color:#000}

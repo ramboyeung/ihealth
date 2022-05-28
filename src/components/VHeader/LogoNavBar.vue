@@ -107,7 +107,7 @@ export default {
   color: #ff6732;
 }
 .searchbar .keywords {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 .searchbar .keywords a {
   margin-right: 8px;

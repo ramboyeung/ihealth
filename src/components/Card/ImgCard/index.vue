@@ -1,5 +1,5 @@
 <template>
-  <div class="card-box">
+  <div class="card-box-wrap">
     <router-link
       class="card-box"
       tag="div"
@@ -7,7 +7,7 @@
       v-for="item in imgData"
       :key="item.id"
     >
-      <img :src="item.imgUrl" alt="" />
+      <img :src="item.imgUrl" alt="" :width="fWidth" />
     </router-link>
   </div>
 </template>
@@ -16,23 +16,23 @@
 export default {
   name: "card",
   props: {
-    imgData: Array
+    imgData: Array,
+    fWidth: Number
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.card-box {
-  cursor: pointer;
+.card-box-wrap {
   width: 1200px;
-  margin: auto;
+  margin: 50px auto;
   display: flex;
   justify-content: space-between;
-  img {
-    width: 380px;
-    &:nth-child(2) {
-      margin-left: 10px;
-      margin-right: 10px;
+  .card-box {
+    cursor: pointer;
+    img {
+      height: auto;
+      // width: 380px;
     }
   }
 }

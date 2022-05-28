@@ -1,8 +1,8 @@
 <template>
   <!-- 页面导航按钮链接区域 -->
-  <div class="nav-hd">
-    <ul class="layout">
-      <li class="nav-text" v-for="(item, index) in hd" :key="index">
+  <div class="nav-wrap">
+    <div class="nav">
+      <div class="nav-item" v-for="(item, index) in hd" :key="index">
         <router-link
           :to="{
             path: item.path,
@@ -16,20 +16,17 @@
           tag="a"
           >{{ item.text }}</router-link
         >
-        <div class="show-item">
-          <div
-            class="show-item-box"
-            v-for="(itm, idx) in item.children"
-            :key="idx"
-          >
-            <div class="show-item-box-seat">
-              <img :src="itm.imgSrc" alt="" />
-              <span>{{ itm.text }}</span>
-            </div>
+        <div class="sub-nav-wrap">
+          <div class="sub-nav">
+            <ul>
+              <li v-for="(itm, idx) in item.children" :key="idx">
+                <img :src="itm.imgSrc" alt="" /><span>{{ itm.text }}</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -69,68 +66,75 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav-hd {
-  background: #fff;
-  // box-shadow: 0 10px 50px 1px #ccc;
-  width: 100%;
+a.actived {
+  color: #ff6732 !important;
+  background-color: pink;
+}
+
+.nav-wrap {
   height: 40px;
+  min-width: 1200px;
+  position: relative; //relative设在nav-wrap还是nav，效果不一样，具体看需求
+}
+.nav {
   display: flex;
-  justify-content: center;
-  .layout {
-    width: 1200px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    .nav-text {
-      flex: 1;
-      text-align: center;
-      &:hover .show-item:not(:empty) {
-        display: block;
-        position: absolute;
-        left: 0;
-        background: #fff;
-        display: flex;
-        width: 100%;
-        height: 180px;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        z-index: 15;
-        padding-left: 50px;
-        .show-item-box {
-          width: 20%;
-          // background: #09f;
-          margin: 20px 0;
-          position: relative;
-          .show-item-box-seat {
-            position: absolute;
-          }
-          img {
-            margin-left: 0;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            vertical-align: middle;
-          }
-          span {
-            margin-left: 10px;
-          }
-        }
-      }
-    }
-    .show-item {
-      display: none;
-    }
-    a {
-      font-size: 16px;
-      color: #333;
-    }
-    a:hover {
-      color: #ff6732;
-      text-decoration: none;
-    }
-    a.actived {
-      color: #ff6732;
-    }
-  }
+  align-items: center;
+  width: 1200px;
+  margin: 30px auto 0;
+}
+.nav-item {
+  flex: 1;
+}
+.nav-item a {
+  font-size: 16px;
+  color: #333;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  text-align: center;
+}
+.nav-item:hover a {
+  color: #ff6732;
+}
+.nav-item:hover .sub-nav-wrap {
+  display: block;
+  z-index: 15;
+}
+.sub-nav-wrap {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.sub-nav {
+  width: 1200px; // 去掉则是占全宽，保留则是占版心
+  margin: 0 auto;
+  display: flex;
+  background-color: #fff;
+}
+.sub-nav ul:not(:empty) {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+.sub-nav li {
+  width: 20%;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.sub-nav img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.sub-nav span {
+  margin-left: 10px;
+  font-size: 14px;
 }
 </style>

@@ -10,7 +10,7 @@
 <script>
 import topBar from "./TopBar.vue";
 import logoNav from "./LogoNavBar.vue";
-import navHd from "./NavHd";
+import navHd from "./NavHd.vue";
 
 export default {
   name: "vheader",

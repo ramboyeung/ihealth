@@ -13,11 +13,11 @@ const routes = [
   {
     path: '/home',
     component: Layout,
-    redirect: '/home',
+    // redirect: '/home',
     children: [
       {
         path: '/home',
-        name: 'home',
+        name: 'home', // 做重定向是为了加默认的选中样式
         component: () => import('../views/Home.vue')
       },
       {
@@ -46,6 +46,7 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  linkExactActiveClass: "actived",
   routes
 })
 
