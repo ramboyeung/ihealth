@@ -1,32 +1,33 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Layout from "@/layout"
+import Layout from "@/components/Layout/index.vue"
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    alias: '/index',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
     component: Layout,
-    // redirect: '/home',
+    redirect: '/home', // 更改页面默认的子路由方式一
     children: [
+      // 更改页面默认的子路由方式二
+      // {
+      //   path: '',
+      //   redirect: '/home'
+      // },
       {
-        path: '/home',
+        path: 'home',
+        alias: 'index',
         name: 'home', // 做重定向是为了加默认的选中样式
         component: () => import('../views/Home.vue')
       },
       {
-        path: '/searchList',
+        path: 'searchList',
         name: 'searchList',
         component: () => import('../views/SearchList.vue')
       },
       {
-        path: '/tjMarket',
+        path: 'tjMarket',
         name: 'tjMarket',
         component: () => import('../views/TjMarket.vue')
       }

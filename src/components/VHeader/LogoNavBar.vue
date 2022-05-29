@@ -13,7 +13,11 @@
           <input class="search-input" type="text" placeholder="团体精选" />
           <!-- search-btn: 控制按钮样式, search-goods/search-shop: 控制按钮背景色 -->
           <a href="javascript:;" class="search-btn search-goods">搜索</a>
-          <div class="search-shop"><a href="javascript:;">购物车</a></div>
+          <div class="search-shop">
+            <a href="javascript:;"
+              ><span class="cart-icon iconfont icon-gouwuche"></span>购物车</a
+            >
+          </div>
         </div>
         <!-- 搜索关键词链接区域 -->
         <div class="keywords">
@@ -80,8 +84,7 @@ export default {
   margin-right: 40px;
 }
 .searchbar .search-btn:hover {
-  background: rgb(245, 202, 9);
-  color: red;
+  color: #333;
   font-weight: 700;
 }
 
@@ -99,6 +102,9 @@ export default {
   border: 1px solid #eee;
   font-size: 14px;
   cursor: pointer;
+}
+.search-shop .cart-icon {
+  margin-right: 10px;
 }
 .searchbar .search-shop a {
   color: #2d2c2c;

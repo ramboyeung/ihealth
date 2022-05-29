@@ -1,19 +1,25 @@
 <template>
   <div class="footer">
     <!-- 底部在此组合 -->
-    <ad></ad>
+    <ad-top></ad-top>
+    <ad-mid></ad-mid>
     <copy-right></copy-right>
   </div>
 </template>
 
 <script>
-import ad from "./Ad";
+import adTop from "./AdTop";
+import adMid from "./AdMid";
 import copyRight from "./CopyRight";
 export default {
   data () {
     return {};
   },
-  components: { ad, copyRight }
+  components: {
+    adTop,
+    adMid,
+    copyRight
+  }
 };
 </script>
 

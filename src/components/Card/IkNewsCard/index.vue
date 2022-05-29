@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "ik-brand-card",
+  name: "ik-news-card",
   props: {
     imgData: Array,
     fWidth: Number
