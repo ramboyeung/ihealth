@@ -72,7 +72,6 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      margin-bottom: 100px;
       .card-box {
         // 单个图片项的容器
         width: 14.2%;

@@ -10,6 +10,7 @@
     <SayHealth :imgData="imG" :fWidth="280" />
     <WhoCare :imgData="imF" :fWidth="380" />
     <IkBrand :imgData="imH" :fWidth="142" />
+    <IkNews :fWidth="160" />
   </div>
 </template>
 
@@ -22,10 +23,11 @@ import GroupCheck from "@/components/Card/GroupCheckCard"
 import SayHealth from "@/components/Card/SayHealthCard"
 import WhoCare from "@/components/Card/WhoCareCard"
 import IkBrand from "@/components/Card/IkBrandCard"
+import IkNews from "@/components/Card/IkNewsCard"
 export default {
   name: 'Home',
   components: {
-    SideBar, MySwiper, ImgCard, AdCard, GroupCheck, SayHealth, WhoCare, IkBrand
+    SideBar, MySwiper, ImgCard, AdCard, GroupCheck, SayHealth, WhoCare, IkBrand, IkNews
   },
   data () {
     return {

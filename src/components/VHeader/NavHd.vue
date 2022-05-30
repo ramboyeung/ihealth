@@ -66,7 +66,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a.actived {
+// 默认是.router-link-active，路由激活时的样式类名可通过路由更改
+::v-deep .current {
   color: #ff6732 !important;
   background-color: pink;
 }
